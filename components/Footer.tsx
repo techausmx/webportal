@@ -152,12 +152,12 @@ export default function Footer() {
             &copy; 2026 Techaus. Todos los derechos reservados.
           </p>
           <div className="flex space-x-6 text-sm text-slate-500">
-            <a href="#" className="hover:text-white">
+            <Link href="/politica-de-privacidad" className="hover:text-white">
               Política de Privacidad
-            </a>
-            <a href="#" className="hover:text-white">
+            </Link>
+            <Link href="/terminos-y-condiciones" className="hover:text-white">
               Términos y Condiciones
-            </a>
+            </Link>
           </div>
         </div>
       </div>
