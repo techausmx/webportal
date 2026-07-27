@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/Family-protection.png"
+          src="/images/latino_family.jpg"
           alt="Insurance Protection"
           fill
           className="object-cover opacity-40"
@@ -50,7 +50,7 @@ export default function Hero() {
             <div className="absolute top-0 -left-4 w-72 h-72 bg-techaus-accent/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
             <div className="absolute top-0 -right-4 w-72 h-72 bg-purple-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" style={{ animationDelay: '2s' }}></div>
             <Image
-              src="/images/Family-protection.png"
+              src="/images/latino_family.jpg"
               alt="Family Protection"
               width={600}
               height={600}
