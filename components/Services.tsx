@@ -1,5 +1,6 @@
 import { Heart, Car, HandshakeIcon, House } from 'lucide-react'
 import { ChevronRight } from 'lucide-react'
+import Link from 'next/link'
 
 const services = [
   {
@@ -7,6 +8,7 @@ const services = [
     title: 'Gastos Médicos',
     description: 'Evita un descalabro financiero ante enfermedades o accidentes. Soluciones a la medida de tu salud.',
     cta: 'Saber más',
+    href: '/proteccion/gastos-medicos',
     borderColor: 'border-techaus-accent',
     iconBg: 'bg-blue-50 group-hover:bg-techaus-accent',
     iconColor: 'text-techaus-accent',
@@ -17,6 +19,7 @@ const services = [
     title: 'Seguro de Auto',
     description: 'Protege tu vehículo contra daños, robo y responsabilidad civil con asistencia vial garantizada.',
     cta: 'Cotizar Auto',
+    href: '/proteccion/seguro-de-auto',
     borderColor: 'border-techaus-primary',
     iconBg: 'bg-slate-100 group-hover:bg-techaus-primary',
     iconColor: 'text-techaus-primary',
@@ -27,6 +30,7 @@ const services = [
     title: 'Seguro de Vida',
     description: 'Garantiza el futuro económico de tus seres queridos ante cualquier eventualidad.',
     cta: 'Ver opciones',
+    href: '/proteccion/seguro-de-vida',
     borderColor: 'border-techaus-accent',
     iconBg: 'bg-blue-50 group-hover:bg-techaus-accent',
     iconColor: 'text-techaus-accent',
@@ -37,6 +41,7 @@ const services = [
     title: 'Hogar y Empresa',
     description: 'Tu patrimonio es tu activo más importante. Protégelo contra fenómenos naturales y robos.',
     cta: 'Proteger patrimonio',
+    href: '/proteccion/hogar-y-empresa',
     borderColor: 'border-techaus-primary',
     iconBg: 'bg-slate-100 group-hover:bg-techaus-primary',
     iconColor: 'text-techaus-primary',
@@ -73,9 +78,9 @@ export default function Services() {
                 </div>
                 <h4 className="text-xl font-bold text-slate-800 mb-3">{service.title}</h4>
                 <p className="text-slate-600 text-sm leading-relaxed mb-6">{service.description}</p>
-                <a href="#" className={`${service.linkColor} font-bold text-sm flex items-center gap-1`}>
+                <Link href={service.href} className={`${service.linkColor} font-bold text-sm flex items-center gap-1`}>
                   {service.cta} <ChevronRight className="w-3 h-3" />
-                </a>
+                </Link>
               </div>
             )
           })}

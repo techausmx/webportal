@@ -1,4 +1,5 @@
 import { Shield, MapPin, Mail, Phone, Facebook, Linkedin, Instagram } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
@@ -36,29 +37,29 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-6 text-white">Enlaces Rápidos</h4>
             <ul className="space-y-3 text-slate-400 text-sm">
               <li>
-                <a href="#" className="hover:text-techaus-accent transition-colors">
+                <Link href="/" className="hover:text-techaus-accent transition-colors">
                   Inicio
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-techaus-accent transition-colors">
+                <Link href="/nosotros" className="hover:text-techaus-accent transition-colors">
                   Nosotros
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-techaus-accent transition-colors">
+                <Link href="/proteccion/seguro-de-vida" className="hover:text-techaus-accent transition-colors">
                   Seguros Personales
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-techaus-accent transition-colors">
+                <Link href="/proteccion/hogar-y-empresa" className="hover:text-techaus-accent transition-colors">
                   Seguros Empresariales
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-techaus-accent transition-colors">
+                <Link href="/soluciones-ia" className="hover:text-techaus-accent transition-colors">
                   Soluciones IA
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
