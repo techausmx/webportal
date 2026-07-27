@@ -46,14 +46,14 @@ export default function Hero() {
 
         {/* Hero Image/Illustration */}
         <div className="lg:w-1/2 mt-12 lg:mt-0 relative hidden lg:block">
-          <div className="relative mx-auto w-full max-w-lg">
+          <div className="relative mx-auto w-full max-w-[410px]">
             <div className="absolute top-0 -left-4 w-72 h-72 bg-techaus-accent/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
             <div className="absolute top-0 -right-4 w-72 h-72 bg-purple-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" style={{ animationDelay: '2s' }}></div>
             <Image
               src="/images/latino_family.jpg"
               alt="Family Protection"
-              width={600}
-              height={600}
+              width={560}
+              height={560}
               className="relative rounded-2xl shadow-2xl border-4 border-white/10 transform rotate-2 hover:rotate-0 transition-all duration-500"
             />
 
