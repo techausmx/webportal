@@ -1,6 +1,14 @@
 import { Shield, MapPin, Mail, Phone, Facebook, Linkedin, Instagram } from 'lucide-react'
 import Link from 'next/link'
 
+function XIcon(props: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={props.className} aria-hidden="true">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  )
+}
+
 export default function Footer() {
   return (
     <footer className="bg-techaus-primary text-white pt-16 pb-8 border-t border-slate-700" id="contact">
@@ -20,13 +28,36 @@ export default function Footer() {
               Soluciones de protección integral y servicios en la nube. Innovación y seguridad para tu familia y empresa.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-slate-400 hover:text-white transition-colors">
+              <a
+                href="https://www.facebook.com/techausmx/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-white transition-colors"
+              >
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-white transition-colors">
+              <a
+                href="https://x.com/techausmx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-white transition-colors"
+              >
+                <XIcon className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/techausmx/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-white transition-colors"
+              >
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-slate-400 hover:text-white transition-colors">
+              <a
+                href="https://www.instagram.com/techausmx/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-white transition-colors"
+              >
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
