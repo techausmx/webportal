@@ -3,6 +3,7 @@ import { Poppins, Nunito_Sans } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${poppins.variable} ${nunitoSans.variable}`} suppressHydrationWarning>
       <body className="font-sans text-slate-600 antialiased bg-slate-50 flex flex-col min-h-screen">
+        <GoogleAnalytics />
         <Navigation />
         <main className="flex-grow">
           {children}
