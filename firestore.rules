@@ -1,0 +1,27 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /cotizaciones/{docId} {
+      allow create: if request.resource.data.keys().hasOnly(['name', 'email', 'phone', 'service', 'createdAt', 'source'])
+                    && request.resource.data.keys().hasAll(['name', 'email', 'phone', 'service', 'createdAt'])
+                    && request.resource.data.name is string
+                    && request.resource.data.name.size() > 0
+                    && request.resource.data.name.size() < 200
+                    && request.resource.data.email is string
+                    && request.resource.data.email.matches('^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$')
+                    && request.resource.data.phone is string
+                    && request.resource.data.phone.size() > 0
+                    && request.resource.data.phone.size() < 30
+                    && request.resource.data['service'] is string
+                    && request.resource.data['service'].size() > 0
+                    && request.resource.data['service'].size() < 100
+                    && request.resource.data.createdAt == request.time;
+      allow read, update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

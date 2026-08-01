@@ -2,6 +2,8 @@
 
 import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
+import { db } from '@/lib/firebase'
 
 function CotizarForm() {
   const searchParams = useSearchParams()
@@ -13,8 +15,10 @@ function CotizarForm() {
     phone: '',
     service: initialService,
   })
-  
+
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState('')
 
   useEffect(() => {
     if (initialService) {
@@ -29,9 +33,28 @@ function CotizarForm() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    if (submitting) return
+    setError('')
+    setSubmitting(true)
+
+    try {
+      await addDoc(collection(db, 'cotizaciones'), {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+        createdAt: serverTimestamp(),
+        source: typeof window !== 'undefined' ? window.location.href : '',
+      })
+      setSubmitted(true)
+    } catch (err) {
+      console.error('Error al enviar la cotización:', err)
+      setError('Ocurrió un error al enviar tu solicitud. Por favor intenta de nuevo.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -124,12 +147,19 @@ function CotizarForm() {
             </select>
           </div>
 
+          {error && (
+            <div className="rounded-xl bg-red-50 border border-red-200 p-4 text-sm text-red-700">
+              {error}
+            </div>
+          )}
+
           <div>
             <button
               type="submit"
-              className="w-full flex justify-center py-3.5 px-4 rounded-xl shadow-lg text-sm font-bold text-white bg-techaus-accent hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-techaus-accent transition-all"
+              disabled={submitting}
+              className="w-full flex justify-center py-3.5 px-4 rounded-xl shadow-lg text-sm font-bold text-white bg-techaus-accent hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-techaus-accent transition-all disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Enviar Solicitud
+              {submitting ? 'Enviando...' : 'Enviar Solicitud'}
             </button>
           </div>
         </form>
