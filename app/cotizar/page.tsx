@@ -4,6 +4,7 @@ import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 import { db } from '@/lib/firebase'
+import { notifyNewCotizacion } from '@/lib/notify'
 
 function CotizarForm() {
   const searchParams = useSearchParams()
@@ -49,6 +50,7 @@ function CotizarForm() {
         source: typeof window !== 'undefined' ? window.location.href : '',
       })
       setSubmitted(true)
+      notifyNewCotizacion(formData)
     } catch (err) {
       console.error('Error al enviar la cotización:', err)
       setError('Ocurrió un error al enviar tu solicitud. Por favor intenta de nuevo.')
