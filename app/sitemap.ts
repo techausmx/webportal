@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/blog'
 import { SITE_URL } from '@/lib/site'
 
+export const dynamic = 'force-static'
+
 const STATIC_ROUTES = [
   '',
   '/cotizar',
