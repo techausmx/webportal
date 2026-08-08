@@ -40,6 +40,9 @@ export default function Navigation() {
             <Link href="/soluciones-ia" className="text-slate-700 hover:text-techaus-accent font-semibold text-sm uppercase tracking-wide transition-colors">
               Soluciones IA
             </Link>
+            <Link href="/blog" className="text-slate-700 hover:text-techaus-accent font-semibold text-sm uppercase tracking-wide transition-colors">
+              Blog
+            </Link>
             <Link href="/nosotros" className="text-slate-700 hover:text-techaus-accent font-semibold text-sm uppercase tracking-wide transition-colors">
               Nosotros
             </Link>
@@ -90,6 +93,9 @@ export default function Navigation() {
             </div>
             <Link href="/soluciones-ia" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 text-base font-medium text-slate-700 hover:text-techaus-accent hover:bg-slate-50 rounded-md">
               Soluciones IA
+            </Link>
+            <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 text-base font-medium text-slate-700 hover:text-techaus-accent hover:bg-slate-50 rounded-md">
+              Blog
             </Link>
             <Link href="/nosotros" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 text-base font-medium text-slate-700 hover:text-techaus-accent hover:bg-slate-50 rounded-md">
               Nosotros

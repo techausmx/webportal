@@ -92,6 +92,11 @@ export default function Footer() {
                   Soluciones IA
                 </Link>
               </li>
+              <li>
+                <Link href="/blog" className="hover:text-techaus-accent transition-colors">
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
 

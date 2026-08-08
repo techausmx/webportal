@@ -4,6 +4,7 @@ import './globals.css'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import { SITE_URL } from '@/lib/site'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -18,6 +19,7 @@ const nunitoSans = Nunito_Sans({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: 'Techaus - Protección Integral y Soluciones IA',
   description: 'Seguros personales, de auto, vida y hogar con el respaldo de profesionales en México.',
 }
