@@ -1,0 +1,8 @@
+{
+  "name": "Techaus - Protección Integral y Soluciones IA",
+  "description": "Seguros personales, de auto, vida y hogar con el respaldo de profesionales en México.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
