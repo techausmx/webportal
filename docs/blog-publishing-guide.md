@@ -98,7 +98,7 @@ GitHub Actions builds the site and deploys it to Firebase Hosting automatically.
 | `excerpt` | Yes | 1–2 line summary. Shown on cards, in search, in the RSS feed, and as the meta description. |
 | `category` | Yes | Post category (e.g. "Salud y Bienestar", "Auto y Movilidad"). Free text — any new value automatically becomes a filter pill on `/blog`. |
 | `subject` | Yes | Post topic (e.g. "Consejos Prácticos", "Educación Financiera"). Also free text. |
-| `date` | Yes | Date in `YYYY-MM-DD` format. Controls ordering everywhere (index, featured post, sitemap, RSS). |
+| `date` | Yes | Date in `YYYY-MM-DD` format. Controls ordering everywhere (index, featured post, sitemap, RSS). **Use today's date, not a future date** — RSS-to-social importers (including LinkedIn's) generally hold or skip items with a future `pubDate` until that date arrives. |
 | `author.name` | Yes | Author's name. |
 | `author.role` | Yes | Author's title, shown under their name. |
 | `author.avatarUrl` | No | Author profile photo URL (optional; falls back to an initial icon if omitted). |

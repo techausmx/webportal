@@ -3,7 +3,7 @@ title: "Conoce la cobertura de seguro parcial para tu Auto"
 excerpt: "Con esta cobertura la compañía de seguros te repone la perdida de una parte de tu auto"
 category: "Auto y Movilidad"
 subject: "Nuevas Coberturas"
-date: "2026-08-10"
+date: "2026-08-08"
 author:
   name: "Enrique Ruibal"
   role: "Representante"
