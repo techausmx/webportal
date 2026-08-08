@@ -20,6 +20,12 @@ function toPlainText(value: string): string {
     .trim()
 }
 
+function imageMimeType(path: string): string {
+  if (path.endsWith('.png')) return 'image/png'
+  if (path.endsWith('.webp')) return 'image/webp'
+  return 'image/jpeg'
+}
+
 export function GET() {
   const posts = getAllPosts()
   const lastBuildDate = posts.length > 0
@@ -28,6 +34,7 @@ export function GET() {
 
   const items = posts.slice(0, 10).map(post => {
     const url = `${SITE_URL}/blog/${post.slug}`
+    const imageUrl = `${SITE_URL}${post.coverImage}`
     const description = toPlainText(post.excerpt || post.title)
     const safeDescription = description.length > 0 ? description : `${post.title} — artículo de Techaus.`
 
@@ -38,6 +45,8 @@ export function GET() {
       <guid isPermaLink="true">${url}</guid>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       <description>${escapeXml(safeDescription)}</description>
+      <enclosure url="${imageUrl}" type="${imageMimeType(post.coverImage)}" length="0" />
+      <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="${imageUrl}" />
     </item>`
   }).join('')
 
